@@ -26,5 +26,10 @@ pipeline
                 steps { 
                     aquaMicroscanner imageName: 'some-nginx:latest', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html'
                 }
-            } 
+            }
+            stage('Push Docker Image to dockerhub') {
+                steps { 
+                    sh './upload_docker.sh'
+                }
+            }
         }
