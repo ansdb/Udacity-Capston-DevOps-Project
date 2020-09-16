@@ -7,5 +7,15 @@ pipeline
                     sh 'tidy -q -e *.html'
                 }
             }
+            stage('Install hadolint'){
+                steps{
+                    sh 'make install'
+                }
+            }
+            stage('Lint Dockerfile'){
+                steps{
+                    sh 'make lint'
+                }
+            }
         
         }
