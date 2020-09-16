@@ -7,7 +7,7 @@ dockerpath=ansdb/some-nginx
 #step 2: authenticate & tag image
 
 cat ../ps.txt | docker login --username ansdb --password-stdin &&\
-    docker tag some-nginx $dockerpath
+    docker tag static-html-nginx $dockerpath
     
 # step 3: push image to docker hub public repositories
 
